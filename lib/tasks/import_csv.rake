@@ -1,4 +1,6 @@
 require 'csv'
+require "./lib/mixins/fixable"
+include Fixable
 
 namespace :csv do
   desc 'Seeds table from CSV to database'
@@ -6,7 +8,7 @@ namespace :csv do
     csv_text = File.read("./db/csv_seeds/#{args[:model_name]}s.csv")
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|
-      args[:model_name].camelize.constantize.create(row.to_hash)
+      args[:model_name].camelize.constantize.create(fix_price(row.to_hash))
     end
     puts args[:model_name].camelize + " imported."
   end
