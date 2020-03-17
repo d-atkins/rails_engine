@@ -1,5 +1,4 @@
 ## Description
-...
 
 ## Type of change
 - [ ] Bug fix
@@ -10,12 +9,12 @@
 ## Notes
 
 ## RSpec Results
-```
-Models:
-
+**Models:**
 ```
 
 ```
-Requests:
+
+**Requests:**
+```
 
 ```
