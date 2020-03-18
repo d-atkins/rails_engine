@@ -6,9 +6,9 @@ class Importer
     @models = [Customer, Merchant, Item, Invoice, InvoiceItem, Transaction]
   end
 
-  def import(model)
+  def import(path, model)
     print "Importing #{model} records... "
-    csv_text = File.read("./db/csv_seeds/#{model.to_s.underscore}s.csv")
+    csv_text = File.read("#{path}#{model.to_s.underscore}s.csv")
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|
       model.create(row.to_hash)
@@ -31,9 +31,9 @@ class Importer
     puts "PK sequences reset."
   end
 
-  def reset_all_tables
+  def reset_all_tables(path)
     destroy_all_records
-    @models.each { |model| import(model) }
+    @models.each { |model| import(path, model) }
     reset_pk_sequences
     puts "Reseed complete!"
   end

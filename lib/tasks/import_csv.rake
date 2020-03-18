@@ -5,7 +5,7 @@ namespace :csv do
   desc 'Reseeds all tables'
   task reseed: :environment do
     importer = Importer.new
-    importer.reset_all_tables
+    importer.reset_all_tables('./db/csv_seeds/')
   end
 end
 
