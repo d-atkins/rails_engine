@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Merchants API:' do
+describe 'Merchants API:', type: :request do
   before(:each) do
     importer = Importer.new
     importer.reset_all_tables('./spec/fixtures/truncated/')
