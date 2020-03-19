@@ -7,7 +7,7 @@ describe 'Items API:', type: :request do
   end
 
   it 'sends back info of newly created item' do
-    item_params = {name: 'thing', description: 'buy it', unit_price: 2.5}
+    item_params = {name: 'thing', description: 'buy it', unit_price: 250, merchant_id: 3}
     post '/api/v1/items', params: {item: item_params}
 
     items = JSON.parse(response.body)
@@ -15,9 +15,9 @@ describe 'Items API:', type: :request do
     expect(response).to be_successful
     expect(items['data']['id']).to eq('17')
     expect(items['data']['type']).to eq('item')
-    expect(items['data']['attributes']['name']).to eq(params[:name])
-    expect(items['data']['attributes']['description']).to eq(params[:description])
-    expect(items['data']['attributes']['unit_price']).to eq(params[:unit_price])
+    expect(items['data']['attributes']['name']).to eq(item_params[:name])
+    expect(items['data']['attributes']['description']).to eq(item_params[:description])
+    expect(items['data']['attributes']['unit_price']).to eq(2.5)
   end
 
 end
