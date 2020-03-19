@@ -1,4 +1,8 @@
+require './lib/modules/searchable'
+
 class Merchant < ApplicationRecord
+  include Searchable
+
   validates_presence_of :name
   has_many :invoices, dependent: :destroy
   has_many :items, dependent: :destroy
@@ -12,5 +16,9 @@ class Merchant < ApplicationRecord
       .group(:id)
       .order('revenue DESC')
       .limit(amount.to_i.abs)
+  end
+
+  def self.partial_matchables
+    ['name']
   end
 end
