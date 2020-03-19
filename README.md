@@ -31,6 +31,15 @@ PATCH /api/v1/merchants/:id
 DELETE /api/v1/merchants/:id
 ```
 
+### Item Endpoints
+```
+GET /api/v1/items
+GET /api/v1/items/:id
+PUT /api/v1/items
+PATCH /api/v1/items/:id
+DELETE /api/v1/items/:id
+```
+
 ### Business Intelligence Endpoints
 ```
 GET /api
