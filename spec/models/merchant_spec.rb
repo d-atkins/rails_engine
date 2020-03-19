@@ -23,5 +23,9 @@ describe Merchant, type: :model do
       expect(Merchant.most_revenue(2)).to eq([expected[0], expected[1]])
       expect(Merchant.most_revenue(1)).to eq([expected[0]])
     end
+
+    it 'partial_matchables' do
+      expect(Merchant.partial_matchables).to eq(['name'])
+    end
   end
 end
