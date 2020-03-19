@@ -6,7 +6,7 @@ describe 'Merchants API:', type: :request do
     importer.reset_all_tables('./spec/fixtures/truncated/')
   end
 
-  it 'sends the new info of a deleted merchant' do
+  it 'sends the info of a deleted merchant' do
     expect(Merchant.count).to eq(3)
     expect(Merchant.last.name).to eq('Ghost Shop')
 
