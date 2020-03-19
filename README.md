@@ -42,5 +42,5 @@ DELETE /api/v1/items/:id
 
 ### Business Intelligence Endpoints
 ```
-GET /api
+GET /api/v1/merchants/most_revenue?quantity=x
 ```
