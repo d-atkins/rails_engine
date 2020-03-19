@@ -10,4 +10,8 @@ class Item < ApplicationRecord
   before_update do
     self.unit_price /= 100.0
   end
+
+  def self.partial_matchables
+    ['name', 'description']
+  end
 end
