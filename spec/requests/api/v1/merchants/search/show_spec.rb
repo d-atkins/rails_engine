@@ -26,4 +26,14 @@ describe 'Merchants API:', type: :request do
     expect(merchant['data']['attributes']['name']).to eq('Schroeder-Jerde')
   end
 
+  it 'sends one merchant by multiple matched parameters' do
+    get '/api/v1/merchants/find?name=jerde&id=1'
+
+    merchant = JSON.parse(response.body)
+
+    expect(response).to be_successful
+    expect(merchant['data']['id']).to eq('1')
+    expect(merchant['data']['attributes']['name']).to eq('Schroeder-Jerde')
+  end
+
 end
