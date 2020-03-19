@@ -13,7 +13,7 @@ describe 'Items API:', type: :request do
     last = Item.last
 
     expect(response).to be_successful
-    expect(items['data']['id']).to eq(16)
+    expect(items['data']['id']).to eq('16')
     expect(items['data']['attributes']['name']).to eq(last.name)
     expect(items['data']['attributes']['description']).to eq(last.description)
     expect(items['data']['attributes']['unit_price']).to eq(last.unit_price)
