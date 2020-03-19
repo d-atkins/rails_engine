@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         post '/', to: 'merchants#create'
         get '/:id', to: 'merchants#show'
         patch '/:id', to: 'merchants#update'
+        delete '/:id', to: 'merchants#destroy'
       end
     end
   end
