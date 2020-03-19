@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
       namespace :items do
         get '/', to: 'items#index'
+        post '/', to: 'items#create'
         get '/:id', to: 'items#show'
       end
     end
