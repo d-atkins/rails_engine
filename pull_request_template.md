@@ -8,6 +8,11 @@
 
 ## Notes
 
+## Added Endpoints
+**Endpoints**
+```
+```
+
 ## RSpec Results
 **Models:**
 ```

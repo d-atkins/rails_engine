@@ -1,24 +1,34 @@
-# README
+# Rails Engine
+This readme is a work in progress.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Project Site](https://backend.turing.io/module3/projects/rails_engine/)
+[Technical Requirements](https://backend.turing.io/module3/projects/rails_engine/requirements)
+[Extensions](https://backend.turing.io/module3/projects/rails_engine/extensions)
+[Evaluation](https://backend.turing.io/module3/projects/rails_engine/evaluation)
 
-Things you may want to cover:
+## Overview
+Rails Engine is an API currently being developed in a simulated service-oriented architecture. Its purpose is to expose the data that powers an E-Commerce Application.
 
-* Ruby version
+This API is being created as a part of Turing School of Software & Design's back-end engineering program.
 
-* System dependencies
+## Setup
+clone, bundle, rake db:{create,migrate}, rake csv:reseed, bundle exec rspec
 
-* Configuration
+## Endpoints
 
-* Database creation
+### Accessing Endpoints
+rails s, localhost:3000 in URL of browser, navigate to desired URI
 
-* Database initialization
+### Merchant Endpoints
+```
+GET /api/v1/merchants
+GET /api/v1/merchants/:id
+PUT /api/v1/merchants
+PATCH /api/v1/merchants/:id
+DELETE /api/v1/merchants/:id
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Business Intelligence Endpoints
+```
+GET /api
+```
