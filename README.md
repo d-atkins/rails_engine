@@ -40,6 +40,12 @@ PATCH /api/v1/items/:id
 DELETE /api/v1/items/:id
 ```
 
+### Nested Resource Endpoints
+```
+GET /api/v1/items/:id/merchant
+GET /api/v1/merchants/:id/items
+```
+
 ### Business Intelligence Endpoints
 ```
 GET /api/v1/merchants/most_revenue?quantity=x
