@@ -24,4 +24,15 @@ describe Item, type: :model do
       expect(item.unit_price).to eq(1.23)
     end
   end
+
+  describe 'methods' do
+    before(:each) do
+      importer = Importer.new
+      importer.reset_all_tables('./spec/fixtures/truncated/')
+    end
+
+    it 'partial_matchables' do
+      expect(Item.partial_matchables).to eq(['name', 'description'])
+    end
+  end
 end
