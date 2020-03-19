@@ -16,6 +16,7 @@ Rails.application.routes.draw do
         post '/', to: 'items#create'
         get '/:id', to: 'items#show'
         patch '/:id', to: 'items#update'
+        delete '/:id', to: 'items#destroy'
       end
     end
   end
