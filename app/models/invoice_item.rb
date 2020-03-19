@@ -6,4 +6,8 @@ class InvoiceItem < ApplicationRecord
   before_create do
     self.unit_price /= 100.0
   end
+
+  before_update do
+    self.unit_price /= 100.0
+  end
 end
