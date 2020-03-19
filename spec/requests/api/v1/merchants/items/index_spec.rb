@@ -6,7 +6,7 @@ describe 'Merchants API:', type: :request do
     importer.reset_all_tables('./spec/fixtures/truncated/')
   end
 
-  it 'sends a list of all merchants' do
+  it 'sends a list of all items from a merchant' do
     get '/api/v1/merchants/2/items'
 
     merchants = JSON.parse(response.body)
