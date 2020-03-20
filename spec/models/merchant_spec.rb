@@ -30,11 +30,13 @@ describe Merchant, type: :model do
 
     it 'search' do
       search_params = {'name' => 'Schroeder-Jerde', 'id' => '1'}
+
       expect(Merchant.search(search_params)).to eq([Merchant.first])
     end
 
     it 'partial_search' do
       search_params = {'name' => 'ghos'}
+      
       expect(Merchant.search(search_params)).to eq([Merchant.third])
     end
   end
