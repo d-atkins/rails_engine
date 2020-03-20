@@ -23,5 +23,21 @@ describe Merchant, type: :model do
       expect(Merchant.most_revenue(2)).to eq([expected[0], expected[1]])
       expect(Merchant.most_revenue(1)).to eq([expected[0]])
     end
+
+    it 'partial_matchables' do
+      expect(Merchant.partial_matchables).to eq(['name'])
+    end
+
+    it 'search' do
+      search_params = {'name' => 'Schroeder-Jerde', 'id' => '1'}
+
+      expect(Merchant.search(search_params)).to eq([Merchant.first])
+    end
+
+    it 'partial_search' do
+      search_params = {'name' => 'ghos'}
+      
+      expect(Merchant.search(search_params)).to eq([Merchant.third])
+    end
   end
 end
