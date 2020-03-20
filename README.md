@@ -46,6 +46,14 @@ GET /api/v1/items/:id/merchant
 GET /api/v1/merchants/:id/items
 ```
 
+### Find Endpoints
+```
+GET /items/find?<attribute>=<value>
+GET /items/find_all?<attribute>=<value>
+GET /merchants/find?<attribute>=<value>
+GET /merchants/find_all?<attribute>=<value>
+```
+
 ### Business Intelligence Endpoints
 ```
 GET /api/v1/merchants/most_revenue?quantity=x
