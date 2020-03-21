@@ -18,6 +18,15 @@ class Merchant < ApplicationRecord
       .limit(amount.to_i.abs)
   end
 
+  def self.most_items_sold(amount)
+    joins(:transactions, :invoice_items)
+      .where(transactions: {result: 1})
+      .select('merchants.*, SUM(invoice_items.quantity) AS amount_sold')
+      .group(:id)
+      .order('amount_sold DESC')
+      .limit(amount.to_i.abs)
+  end
+
   def self.partial_matchables
     ['name']
   end
