@@ -24,6 +24,13 @@ describe Merchant, type: :model do
       expect(Merchant.most_revenue(1)).to eq([expected[0]])
     end
 
+    it 'most_items_sold' do
+      expected = [Merchant.second, Merchant.first, Merchant.third]
+      expect(Merchant.most_items_sold(3)).to eq(expected)
+      expect(Merchant.most_items_sold(2)).to eq([expected[0], expected[1]])
+      expect(Merchant.most_items_sold(1)).to eq([expected[0]])
+    end
+
     it 'partial_matchables' do
       expect(Merchant.partial_matchables).to eq(['name'])
     end
@@ -36,7 +43,7 @@ describe Merchant, type: :model do
 
     it 'partial_search' do
       search_params = {'name' => 'ghos'}
-      
+
       expect(Merchant.search(search_params)).to eq([Merchant.third])
     end
   end
