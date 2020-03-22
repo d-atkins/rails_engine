@@ -24,6 +24,12 @@ describe Merchant, type: :model do
       expect(Merchant.most_revenue(1)).to eq([expected[0]])
     end
 
+    it 'revenue' do
+      expect(Merchant.first.revenue.round(2)).to eq(21419.68)
+      expect(Merchant.second.revenue.round(2)).to eq(24753.99)
+      expect(Merchant.third.revenue.round(2)).to eq(123.45)
+    end
+
     it 'most_items_sold' do
       expected = [Merchant.second, Merchant.first, Merchant.third]
       expect(Merchant.most_items_sold(3)).to eq(expected)
