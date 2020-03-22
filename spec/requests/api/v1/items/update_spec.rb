@@ -27,7 +27,3 @@ describe 'Items API:', type: :request do
   end
 
 end
-
-joins(:transactions, :invoice_items).where(transactions: {result: 1}).select('merchants.*, SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue').group(:id).order('revenue DESC').limit(amount.to_i.abs)
-
-joins(:transactions, :invoice_items).where(transactions: {result: 1}, invoices: {created_at: start_date..end_date})
