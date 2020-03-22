@@ -18,6 +18,13 @@ class Merchant < ApplicationRecord
       .limit(amount.to_i.abs)
   end
 
+  def revenue
+    invoices
+      .joins(:transactions, :invoice_items)
+      .where(transactions: {result: 1})
+      .sum('invoice_items.quantity * invoice_items.unit_price')
+  end
+
   def self.most_items_sold(amount)
     joins(:transactions, :invoice_items)
       .where(transactions: {result: 1})
