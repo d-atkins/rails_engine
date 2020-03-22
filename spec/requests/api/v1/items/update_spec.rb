@@ -12,7 +12,7 @@ describe 'Items API:', type: :request do
 
     item_params = {name: 'Ghost Goods', unit_price: 25000}
     old_description = Item.last.description
-    patch '/api/v1/items/16', params: {item: item_params}
+    patch '/api/v1/items/16', params: item_params
 
     items = JSON.parse(response.body)
 
@@ -27,3 +27,7 @@ describe 'Items API:', type: :request do
   end
 
 end
+
+joins(:transactions, :invoice_items).where(transactions: {result: 1}).select('merchants.*, SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue').group(:id).order('revenue DESC').limit(amount.to_i.abs)
+
+joins(:transactions, :invoice_items).where(transactions: {result: 1}, invoices: {created_at: start_date..end_date})
