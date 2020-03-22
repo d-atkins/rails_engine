@@ -8,11 +8,11 @@ class Item < ApplicationRecord
   has_many :invoice_items, dependent: :destroy
 
   before_create do
-    self.unit_price /= 100.0
+    self.unit_price /= 100.0 unless self.unit_price.class == Float
   end
 
   before_update do
-    self.unit_price /= 100.0
+    self.unit_price /= 100.0 unless self.unit_price.class == Float
   end
 
   def self.partial_matchables

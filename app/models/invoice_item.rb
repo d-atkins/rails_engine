@@ -4,7 +4,7 @@ class InvoiceItem < ApplicationRecord
   belongs_to :invoice
 
   before_create do
-    self.unit_price /= 100.0
+    self.unit_price /= 100.0 unless self.unit_price.class == Float
   end
 
   # before_update do
