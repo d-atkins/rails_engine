@@ -46,10 +46,5 @@ describe Merchant, type: :model do
 
       expect(Merchant.search(search_params)).to eq([Merchant.third])
     end
-
-    it 'revenue_across' do
-      expected = 102058.34
-      expect(Merchant.revenue_across('2012-03-20', '2012-03-30').round(2)).to eq(expected)
-    end
   end
 end
