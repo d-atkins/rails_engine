@@ -48,7 +48,7 @@ describe Merchant, type: :model do
     end
 
     it 'revenue_across' do
-      expected = 256790.49
+      expected = 102058.34
       expect(Merchant.revenue_across('2012-03-20', '2012-03-30').round(2)).to eq(expected)
     end
   end
