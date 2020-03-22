@@ -6,10 +6,22 @@ class Importer
     @models = [Customer, Merchant, Invoice, Transaction, Item, InvoiceItem]
   end
 
-  def import(path, model)
+  def parsed_csv(path, model)
     csv_text = File.read("#{path}#{model.to_s.underscore}s.csv")
-    csv = CSV.parse(csv_text, :headers => true)
+    CSV.parse(csv_text, :headers => true)
+  end
+
+  def import(path, model)
+    csv = parsed_csv(path, model)
     csv.each do |row|
+      model.create(row.to_hash)
+    end
+  end
+
+  def conversion_import(path, model)
+    csv = parsed_csv(path, model)
+    csv.each do |row|
+      row['unit_price'] = row['unit_price'].to_f / 100
       model.create(row.to_hash)
     end
   end
@@ -30,9 +42,14 @@ class Importer
       destroy_records(model)
       puts "DONE" if print
     end
-    @models.each do |model|
+    @models[0..3].each do |model|
       print "Importing #{model} records... " if print
       import(path, model)
+      puts "DONE" if print
+    end
+    @models[4..5].each do |model|
+      print "Importing #{model} records... " if print
+      conversion_import(path, model)
       puts "DONE" if print
     end
     reset_pk_sequences
