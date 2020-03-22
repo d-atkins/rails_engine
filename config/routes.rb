@@ -25,6 +25,10 @@ Rails.application.routes.draw do
         delete '/:id', to: 'items#destroy'
         get '/:item_id/merchant', to: 'merchant#show'
       end
+
+      namespace :revenue do
+        get '/', to: 'revenue#show'
+      end
     end
   end
 end
