@@ -12,19 +12,6 @@ describe Item, type: :model do
     it { should belong_to :merchant }
   end
 
-  describe 'callbacks' do
-    it 'convert price upon creation' do
-      item = create(:item, unit_price: 552)
-      expect(item.unit_price).to eq(5.52)
-    end
-
-    it 'convert price upon updating' do
-      item = create(:item, unit_price: 552)
-      item.update(unit_price: 123)
-      expect(item.unit_price).to eq(1.23)
-    end
-  end
-
   describe 'methods' do
     before(:each) do
       importer = Importer.new
