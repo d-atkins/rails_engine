@@ -30,4 +30,10 @@ class Merchant < ApplicationRecord
   def self.partial_matchables
     ['name']
   end
+
+  def self.revenue_across(start_date, end_date)
+    joins(:transactions, :invoice_items)
+      .where(transactions: {created_at: start_date..end_date})
+      .sum('invoice_items.quantity * invoice_items.unit_price')
+  end
 end
