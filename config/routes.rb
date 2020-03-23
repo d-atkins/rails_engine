@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       namespace :merchants do
         resources :most_revenue, only: [:index]
+        resources :most_items, only: [:index]
+        get '/:id/revenue/', to: 'revenue#show'
         get '/find_all', to: 'search#index'
         get '/find', to: 'search#show'
         get '/', to: 'merchants#index'
@@ -23,6 +25,10 @@ Rails.application.routes.draw do
         patch '/:id', to: 'items#update'
         delete '/:id', to: 'items#destroy'
         get '/:item_id/merchant', to: 'merchant#show'
+      end
+
+      namespace :revenue do
+        get '/', to: 'revenue#show'
       end
     end
   end

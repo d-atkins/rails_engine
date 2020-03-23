@@ -10,9 +10,9 @@ describe 'Items API:', type: :request do
     expect(Item.last.name).to eq('Item Ghost Magnam')
     expect(Item.last.unit_price).to eq(123.45)
 
-    item_params = {name: 'Ghost Goods', unit_price: 25000}
+    item_params = {name: 'Ghost Goods', unit_price: 250}
     old_description = Item.last.description
-    patch '/api/v1/items/16', params: {item: item_params}
+    patch '/api/v1/items/16', params: item_params
 
     items = JSON.parse(response.body)
 

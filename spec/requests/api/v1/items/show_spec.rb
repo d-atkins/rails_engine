@@ -6,7 +6,7 @@ describe 'Items API:', type: :request do
     importer.reset_all_tables('./spec/fixtures/truncated/')
   end
 
-  it 'sends one items by id' do
+  it 'sends one item by id' do
     get '/api/v1/items/16'
 
     items = JSON.parse(response.body)

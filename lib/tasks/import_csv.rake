@@ -13,4 +13,5 @@ desc 'Resets all primary key sequences'
 task reset_pk_sequences: :environment do
   importer = Importer.new
   importer.reset_pk_sequences
+  puts "PK sequences reset."
 end

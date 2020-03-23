@@ -7,8 +7,8 @@ describe 'Items API:', type: :request do
   end
 
   it 'sends back info of newly created item' do
-    item_params = {name: 'thing', description: 'buy it', unit_price: 250, merchant_id: 3}
-    post '/api/v1/items', params: {item: item_params}
+    item_params = {name: 'thing', description: 'buy it', unit_price: 2.50, merchant_id: 3}
+    post '/api/v1/items', params: item_params
 
     items = JSON.parse(response.body)
 
