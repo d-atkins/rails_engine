@@ -136,7 +136,8 @@ DELETE /api/v1/items/:id
         "name": "Item Qui Esse",
         "description": "Nihil autem sit odio inventore deleniti. Est laudantium ratione distinctio laborum. Minus voluptatem nesciunt assumenda dicta voluptatum porro.",
         "unit_price": 751.07,
-        "merchant_id": 1
+        "merchant_id": 1,
+        "merchant_name": "Schroeder-Jerde"
       },
       "relationships": {
         "merchant": {
@@ -154,7 +155,8 @@ DELETE /api/v1/items/:id
         "name": "Item Autem Minima",
         "description": "Cumque consequuntur ad. Fuga tenetur illo molestias enim aut iste. Provident quo hic aut. Aut quidem voluptates dolores. Dolorem quae ab alias tempora.",
         "unit_price": 670.76,
-        "merchant_id": 1
+        "merchant_id": 1,
+        "merchant_name": "Schroeder-Jerde"
       },
       "relationships": {
         "merchant": {
@@ -172,7 +174,8 @@ DELETE /api/v1/items/:id
         "name": "Item Ea Voluptatum",
         "description": "Sunt officia eum qui molestiae. Nesciunt quidem cupiditate reiciendis est commodi non. Atque eveniet sed. Illum excepturi praesentium reiciendis voluptatibus eveniet odit perspiciatis. Odio optio nisi rerum nihil ut.",
         "unit_price": 323.01,
-        "merchant_id": 1
+        "merchant_id": 1,
+        "merchant_name": "Schroeder-Jerde"
       },
       "relationships": {
         "merchant": {
@@ -196,7 +199,8 @@ DELETE /api/v1/items/:id
       "name": "Item Qui Esse",
       "description": "Nihil autem sit odio inventore deleniti. Est laudantium ratione distinctio laborum. Minus voluptatem nesciunt assumenda dicta voluptatum porro.",
       "unit_price": 751.07,
-      "merchant_id": 1
+      "merchant_id": 1,
+      "merchant_name": "Schroeder-Jerde"
     },
     "relationships": {
       "merchant": {
