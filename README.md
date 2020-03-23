@@ -1,5 +1,6 @@
 # Rails Engine
-[Project Site](https://backend.turing.io/module3/projects/rails_engine/)
+[Project Site](https://backend.turing.io/module3/projects/rails_engine/)<br>
+[Schema](https://i.imgur.com/8nDXDDM.png)
 
 ## Overview
 Rails Engine is an API developed over one week in a service-oriented architecture. Its purpose is to expose the data that powers an E-Commerce Application.
