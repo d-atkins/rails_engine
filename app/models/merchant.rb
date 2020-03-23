@@ -9,13 +9,14 @@ class Merchant < ApplicationRecord
   has_many :invoice_items, through: :invoices
   has_many :transactions, through: :invoices
 
-  def self.most_revenue(amount)
-    joins(:transactions, :invoice_items)
+  # .joins('INNER JOIN transactions ON transactions.invoice_id = invoices.id')
+  def self.most_revenue(limit)
+    select('merchants.*, SUM(invoice_items.quantity * invoice_items.unit_price) AS total_revenue')
+      .joins(invoices: [:transactions, :invoice_items])
       .where(transactions: {result: 1})
-      .select('merchants.*, SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue')
       .group(:id)
-      .order('revenue DESC')
-      .limit(amount.to_i.abs)
+      .order('total_revenue DESC')
+      .limit(limit.to_i.abs)
   end
 
   def revenue
