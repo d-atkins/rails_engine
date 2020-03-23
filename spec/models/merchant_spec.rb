@@ -33,8 +33,6 @@ describe Merchant, type: :model do
     it 'most_items_sold' do
       expected = [Merchant.second, Merchant.first, Merchant.third]
       expect(Merchant.most_items_sold(3)).to eq(expected)
-      expect(Merchant.most_items_sold(2)).to eq([expected[0], expected[1]])
-      expect(Merchant.most_items_sold(1)).to eq([expected[0]])
     end
 
     it 'partial_matchables' do
