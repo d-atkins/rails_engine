@@ -1,6 +1,7 @@
 # Rails Engine
 [Project Site](https://backend.turing.io/module3/projects/rails_engine/)<br>
-[Schema](https://i.imgur.com/8nDXDDM.png)
+[Schema](https://i.imgur.com/8nDXDDM.png)<br>
+[Front-End App](https://github.com/d-atkins/rails_driver)
 
 ## Overview
 Rails Engine is an API developed over one week in a service-oriented architecture. Its purpose is to expose the data that powers an E-Commerce Application.
@@ -266,9 +267,19 @@ GET /merchants/find_all?<attribute>=<value>
 GET /api/v1/merchants/find?name=Shop&created_at=2020-03-23 14:53:59
 ```
 ### Business Intelligence Endpoints
+> List of the first `x` merchants with the highest revenue
 ```
 GET /api/v1/merchants/most_revenue?quantity=x
+```
+> List of the first `x` merchants with the most items sold
+```
 GET /api/v1/merchants/most_items?quantity=x
+```
+> Total revenue across all merchants between the specified dates
+```
 GET /api/v1/revenue?start=<start_date>&end=<end_date>
+```
+> Total revenue of a single merchant
+```
 GET /api/v1/merchants/:id/revenue
 ```
