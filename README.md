@@ -85,6 +85,7 @@ DELETE /api/v1/merchants/:id
         "type": "merchant",
         "attributes": {
           "name": "Dog Store",
+          "revenue": 12319.124141
         }
     },
     {
@@ -92,6 +93,7 @@ DELETE /api/v1/merchants/:id
       "type": "merchant",
       "attributes": {
         "name": "Donut Store",
+        "revenue": 475452.48591
       }
     },
     {
@@ -99,6 +101,7 @@ DELETE /api/v1/merchants/:id
       "type": "merchant",
       "attributes": {
         "name": "Shop Store",
+        "revenue": 9.14
       }
     }
   ]
@@ -111,7 +114,8 @@ DELETE /api/v1/merchants/:id
     "id": "1",
     "type": "merchant",
     "attributes": {
-      "name": "Dog Store"
+      "name": "Dog Store",
+      "revenue": 12319.124141
     }
   }
 }
