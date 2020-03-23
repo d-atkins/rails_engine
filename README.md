@@ -45,7 +45,7 @@ For GET requests: Append URI for desired endpoint. For example:
 ```
 localhost:3000/api/v1/merchants/6
 ```
-For other requests, use [Postman](https://www.postman.com/) or the [front-end app](https://github.com/turingschool-examples/rails_driver/tree/656c57ab30e891b9234b96143e065f0b67d2ffa3)
+For other requests, use [Postman](https://www.postman.com/) or the [front-end app](https://github.com/d-atkins/rails_driver)
 
 ### CRUD Functionality
 The body for `POST` and `PATCH` requests should follow this pattern:
